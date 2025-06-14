@@ -12,6 +12,7 @@ import {
   Clock,
   FileText
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -28,32 +29,32 @@ import {
 const navigationItems = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/dashboard",
     icon: BarChart3,
   },
   {
     title: "City to Port Loads",
-    url: "#",
+    url: "/city-to-port-loads",
     icon: Ship,
   },
   {
     title: "Truck Fleet",
-    url: "#",
+    url: "/truck-fleet",
     icon: Truck,
   },
   {
     title: "Route Planning",
-    url: "#",
+    url: "/route-planning",
     icon: Route,
   },
   {
     title: "Load Tracking",
-    url: "#",
+    url: "/load-tracking",
     icon: Navigation,
   },
   {
     title: "Port Schedule",
-    url: "#",
+    url: "/port-schedule",
     icon: Clock,
   },
 ];
@@ -104,10 +105,10 @@ export function AppSidebar() {
               {navigationItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-2">
+                    <Link to={item.url} className="flex items-center gap-2">
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
